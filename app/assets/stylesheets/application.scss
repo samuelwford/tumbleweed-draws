@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+// pale yellow to match the default "warning" color used for the navbar - temporary until navbar is restyled
+$body-background-color: #FFF0C7;
+
+@import "bulma";
