@@ -14,7 +14,15 @@
  *= require_self
  */
 
-// pale yellow to match the default "warning" color used for the navbar - temporary until navbar is restyled
-$body-background-color: #FFF0C7;
+// shye's color palette
+$brown: #9e512b;
+$coral: #f36b46;
+$light-tan: #ffebe1;
+$gold: #ffca4e; 
+$light-yellow: #ffecc1;
+
+// "theme" the site
+$body-background-color: $light-tan;
+$primary: $coral;
 
 @import "bulma";
