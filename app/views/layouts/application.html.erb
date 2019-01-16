@@ -40,14 +40,7 @@
         <div class="content">
     
         <% flash.each do |key, value| %>
-          <article class="message is-<%= key %>">
-            <div class="message-header">
-              <p class="is-capitalized"><%= key %></p>
-            </div>
-            <div class="message-body">
-              <%= value %>
-            </div>
-          </article>
+          <div class="notification is-<%= key%>"><%= value%></div>
         <% end %>
         
     <%= yield %>

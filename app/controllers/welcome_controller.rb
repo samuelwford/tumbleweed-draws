@@ -18,7 +18,7 @@ class WelcomeController < ApplicationController
   
   def logout
     session[:user_id] = nil
-    flash[:info] = "Logged out."
+    flash[:warning] = "Logged out."
     redirect_to root_path
   end
 end
