@@ -6,7 +6,7 @@ class WelcomeController < ApplicationController
   def authenticate
     params.permit(:password)
     
-    if params[:password] == "tumble"    
+    if params[:password] == Rails.configuration.admin_password
       session[:user_id] = "tumbleweed"
       flash[:success] = "Logged in."
       redirect_to about_path
