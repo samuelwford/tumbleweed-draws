@@ -18,6 +18,10 @@
     </div>
   </div>
 
+  <% if @drawing.picture.attached? %>
+    <%= image_tag @drawing.picture, class: "thumb" %>
+  <% end %>
+
   <div class="field">
     <div class="file has-name is-fullwidth">
       <label class="file-label">
