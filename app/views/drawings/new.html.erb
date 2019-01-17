@@ -1,5 +1,7 @@
 <h1>New Drawing</h1>
 
-<%= render 'form', drawing: @drawing %>
+<% content_for :actions do %>
+    <%= link_to 'Back', drawings_path, class: 'button' %>
+<% end %>
 
-<%= link_to 'Back', drawings_path %>
+<%= render 'form', drawing: @drawing %>

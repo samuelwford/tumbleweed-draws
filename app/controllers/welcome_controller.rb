@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
     if params[:password] == Rails.configuration.admin_password
       session[:user_id] = "tumbleweed"
       flash[:success] = "Logged in."
-      redirect_to about_path
+      redirect_to drawings_path
     else
       flash[:danger] = "Invalid password."
       redirect_to login_path

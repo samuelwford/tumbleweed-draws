@@ -1,5 +1,6 @@
 class DrawingsController < ApplicationController
   before_action :set_drawing, only: [:show, :edit, :update, :destroy]
+  before_action :authorize
 
   # GET /drawings
   # GET /drawings.json
@@ -62,6 +63,10 @@ class DrawingsController < ApplicationController
   end
 
   private
+    def authorize
+      redirect_to login_path unless logged_in?
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_drawing
       @drawing = Drawing.find(params[:id])

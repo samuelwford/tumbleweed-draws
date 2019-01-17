@@ -1,14 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @drawing.title %>
-</p>
+<div class="box">
+  <div class="title"><%= @drawing.title %></div>
+  <%= @drawing.notes.html_safe %>
+</div>
 
-<p>
-  <strong>Notes:</strong>
-  <%= @drawing.notes %>
-</p>
-
-<%= link_to 'Edit', edit_drawing_path(@drawing) %> |
-<%= link_to 'Back', drawings_path %>
+<div class="buttons">
+  <%= link_to 'Edit', edit_drawing_path(@drawing), class: 'button is-primary' %>
+  <%= link_to 'Back', drawings_path, class: 'button' %>
+</div>

@@ -2,7 +2,8 @@
 
 <h1>Drawings</h1>
 
-<table>
+<div class="box">
+<table class="table is-striped">
   <thead>
     <tr>
       <th>Title</th>
@@ -15,15 +16,20 @@
     <% @drawings.each do |drawing| %>
       <tr>
         <td><%= drawing.title %></td>
-        <td><%= drawing.notes %></td>
-        <td><%= link_to 'Show', drawing %></td>
-        <td><%= link_to 'Edit', edit_drawing_path(drawing) %></td>
-        <td><%= link_to 'Destroy', drawing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= drawing.notes.html_safe %></td>
+        <td>
+          <%= link_to 'Show', drawing, class: 'button' %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_drawing_path(drawing), class: 'button is-primary' %>
+          </td>
+          <td>
+            <%= link_to 'Destroy', drawing, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
-<br>
-
-<%= link_to 'New Drawing', new_drawing_path %>
+<%= link_to 'New Drawing', new_drawing_path, class: 'button is-primary' %>
