@@ -16,31 +16,9 @@
   </div>
 </div>
 
-<div class="box">
-  <div class="title">A Fox in Need</div>
-    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/781353ef-51b8-4acf-a78b-b79b39be5de0/dcwywc4-e4db8e7f-0a18-41b6-aa5f-b481f3a1a340.png/v1/fill/w_1087,h_735,q_70,strp/a_fox_in_need_by_zemellow_dcwywc4-pre.jpg"/>
-    <p>
-    An incredibly small assignment I had to do for my digital art class and went way too in-depth with it<br>
-    I mostly do small art pieces with no background, and i'm pretty sure this is most complex thing i've ever drawn??<br>
-    took 14 hours on this i believe
-  </p>
-  <p>
-    note - tumbleweed-draws.com is my website that's currently still a w.i.p., i didn't steal this from anywhere <i class="em em-smile"></i>
-  </p>
-  <p>
-    All art drawn by yours truly. <i class="em em-wink"></i><br> <br/>
-    Based off of the painting dubbed "A Friend in Need" painted by Cassius Marcellus Coolidge. <br/>
-    Characters ([from very left, clockwise]Rouge the Bat, Silver the Hedgehog, Sonic the Hedgehog, Shadow the Hedgehog, Blaze the Cat, Knuckles the Echidna, and Miles "Tails" Prower) are all from the video game series "Sonic the Hedgehog" published by SEGA. <br/>
-    Drawn in the program Autodesk Sketchbook version 8.6.1.
-  </p>
-  <div class="tags">
-          <span class="tag is-primary">blaze</span>
-          <span class="tag is-dark">painting</span>
-          <span class="tag is-info">poker</span>
-          <span class="tag">sonic</span>
-          <span class="tag">shadow</span>
-          <span class="tag">rouge</span>
-          <span class="tag">silver</span>
-          <a href="#"><span class="tag">tails</span></a>
-  </div>
+<% @drawings.each do |drawing| %>
+  <div class="box">
+  <div class="title"><%= drawing.title %></div>
+  <%= drawing.notes.html_safe %>
 </div>
+<% end %>

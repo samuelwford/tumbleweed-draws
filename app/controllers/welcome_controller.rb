@@ -1,8 +1,8 @@
 class WelcomeController < ApplicationController
-  def about
-    redirect_to login_path unless logged_in?
+  def index
+    @drawings = Drawing.all.order(created_at: :desc)
   end
-  
+
   def authenticate
     params.permit(:password)
     
