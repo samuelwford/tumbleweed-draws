@@ -7,6 +7,7 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Picture</th>
       <th>Notes</th>
       <th colspan="3"></th>
     </tr>
@@ -16,6 +17,15 @@
     <% @drawings.each do |drawing| %>
       <tr>
         <td><%= drawing.title %></td>
+        <td>
+          <figure class="image is-128x128">
+          <% if drawing.picture.attached? %>
+            <%= image_tag drawing.picture %>
+          <% else %>
+            <%= image_tag "placeholder.png" %>
+          <% end %>
+          </figure>
+        </td>
         <td><%= drawing.notes.html_safe %></td>
         <td>
           <%= link_to 'Show', drawing, class: 'button' %>

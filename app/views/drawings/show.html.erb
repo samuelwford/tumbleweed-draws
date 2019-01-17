@@ -2,6 +2,13 @@
 
 <div class="box">
   <div class="title"><%= @drawing.title %></div>
+  <% if @drawing.picture.attached? %>
+    <%= image_tag @drawing.picture %>
+    <% else %>
+    <figure class="image is-128x128">
+      <%= image_tag "placeholder.png" %>
+    </figure>
+  <% end %>
   <%= @drawing.notes.html_safe %>
 </div>
 

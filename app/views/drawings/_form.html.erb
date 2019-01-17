@@ -19,6 +19,21 @@
   </div>
 
   <div class="field">
+    <div class="file has-name is-fullwidth">
+      <label class="file-label">
+        <%= form.file_field :picture, class: 'file-input' %>
+        <span class="file-cta">
+          <span class="file-icon">
+            <i class="fas fa-upload"></i>
+          </span>
+          <span class="file-label">Choose a picture ...</span>
+        </span>
+        <span class="file-name" id="filename"></span>
+        </label>
+    </div>
+  </div>
+
+  <div class="field">
     <%= form.label :notes, class: 'label' %>
     <%= form.hidden_field :notes %>
     <div class="control box">

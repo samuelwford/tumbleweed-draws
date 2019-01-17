@@ -1,3 +1,4 @@
+// toggle the dropdown menu for mobile view
 document.addEventListener('DOMContentLoaded', function() {
 
   // Get all "navbar-burger" elements
@@ -22,4 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // pull out the selected file upload name for forms
+  var file = document.getElementById("drawing_picture");
+  file.onchange = function() {
+    if (file.files.length > 0) {
+      document.getElementById('filename').innerHTML = file.files[0].name;
+    }
+  }
 });

@@ -19,6 +19,9 @@
 <% @drawings.each do |drawing| %>
   <div class="box">
   <div class="title"><%= drawing.title %></div>
+  <% if drawing.picture.attached? %>
+    <%= image_tag drawing.picture %>
+  <% end %>
   <%= drawing.notes.html_safe %>
 </div>
 <% end %>
