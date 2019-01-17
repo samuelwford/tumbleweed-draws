@@ -13,16 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-// shye's color palette
-$brown: #9e512b;
-$coral: #f36b46;
-$light-tan: #ffebe1;
-$gold: #ffca4e; 
-$light-yellow: #ffecc1;
-
-// "theme" the site
-$body-background-color: $light-tan;
-$primary: $coral;
-
-@import "bulma";
