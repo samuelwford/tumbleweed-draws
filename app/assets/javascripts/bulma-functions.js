@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
   if (navbarBurgers.length > 0) {
 
     // Add a click event on each of them
-    navbarBurgers.forEach( el => {
-      el.addEventListener('click', () => {
+    navbarBurgers.forEach( function(el) {
+      el.addEventListener('click', function() {
 
         // Get the target from the "data-target" attribute
         var target = el.dataset.target;
