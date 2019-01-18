@@ -1,5 +1,5 @@
 // toggle the dropdown menu for mobile view
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('turbolinks:load', function() {
 
   // Get all "navbar-burger" elements
   var navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -30,4 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('filename').innerHTML = file.files[0].name;
     }
   }
+
+  // trigger fontawesome for icons
+  FontAwesome.dom.i2svg();
 });
