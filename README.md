@@ -1,24 +1,15 @@
-# README
+# Tumbleweed Draws Site
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails 5 app for Shye's web site. Hosted at [tumbleweed-draws.com](http://tumbleweed-draws.com).
 
-Things you may want to cover:
+Login to enable the admin functions at [tumbleweed-draws.herokuapp.com/login](https://tumbleweed-draws.herokuapp.com/login).
 
-* Ruby version
+## Developing
 
-* System dependencies
+Develop with Postgres locally; recommend using [Postgres](https://postgresapp.com) app. Becareful when running `bundle install` since the `pg` gem will fail. Use:
 
-* Configuration
+```
+gem install pg -- --with-pg-config=/Applications/Postgres.app/Contents/Versions/9.5/bin/pg_config
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Use `rbenv` to install and manage Rubies.
