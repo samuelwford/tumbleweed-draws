@@ -16,20 +16,4 @@
   </div>
 </div>
 
-<% @drawings.each do |drawing| %>
-  <div class="box">
-  <div class="title"><%= drawing.title %></div>
-  <% if drawing.picture.attached? %>
-    <%= image_tag drawing.picture %>
-  <% end %>
-  <%= drawing.notes.html_safe %>
-  <p>
-    <div class="tags">
-      <% drawing.tags.each do |tag| %>
-        <span class="tag"><%= tag %></span>
-      <% end %>
-    </div>
-  </p>
-
-</div>
-<% end %>
+<%= render @drawings %>

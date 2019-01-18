@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :drawings
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
+  resources :tags, only: [:index, :show]
+    
   get 'about', to: 'welcome#about'
   
   get 'login', to: 'welcome#login'
