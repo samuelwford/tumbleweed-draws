@@ -38,6 +38,13 @@
   </div>
 
   <div class="field">
+    <%= form.label :tags, class: 'label' %>
+    <div class="control">
+      <%= form.text_field :tag_list, value: form.object.tag_list.to_s, class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
     <%= form.label :notes, class: 'label' %>
     <%= form.hidden_field :notes %>
     <div class="control box">

@@ -10,6 +10,17 @@
     </figure>
   <% end %>
   <%= @drawing.notes.html_safe %>
+
+  <p>
+    <div class="tags">
+      <% @drawing.tags.each do |tag| %>
+        <span class="tag"><%= tag %></span>
+      <% end %>
+    </div>
+  </p>
+
+</div>
+
 </div>
 
 <div class="buttons">
