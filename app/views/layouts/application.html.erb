@@ -59,7 +59,7 @@
         <div class="content">
     
         <% flash.each do |key, value| %>
-          <div class="notification is-<%= key%>"><%= value%></div>
+          <div class="notification is-<%= key == "notice" ? "success" : key %>"><%= value%></div>
         <% end %>
         
     <%= yield %>
