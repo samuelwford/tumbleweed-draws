@@ -1,2 +1,7 @@
-<h1><span class="tag is-large"><%= @tag.name %></span></h1>
+<p>
+  <div class="tags has-addons">
+    <%= link_to @tag.name, tag_path(@tag), class: 'tag is-primary is-large' %>
+    <span class="tag is-dark is-large"><%= @tag.taggings_count %></span>
+  </div>
+</p>
 <div><%= render @drawings %></div>
