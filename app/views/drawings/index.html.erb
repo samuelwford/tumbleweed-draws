@@ -2,15 +2,15 @@
 
 <h1>Drawings</h1>
 
+<p>
+<%= link_to 'New Drawing', new_drawing_path, class: 'button is-primary' %>
+</p>
+
 <div class="box">
-<table class="table is-striped">
+<table class="table">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Tags</th>
-      <th>Picture</th>
-      <th>Notes</th>
-      <th colspan="4"></th>
+      <th colspan="4">Drawing</th>
     </tr>
   </thead>
 
@@ -19,42 +19,31 @@
       <tr>
         <td>
           <%= drawing.title %>
+          <div>
+            <small>
+              <%= time_ago_in_words drawing.created_at %> ago
+            </small>
+          </div>
+        </td>
+        <td>
+          <% if drawing.picture.attached? %>
+            <%= image_tag drawing.picture, class: "thumb" %>
+          <% else %>
+            <%= image_tag "placeholder.png", class: "thumb" %>
+          <% end %>
         </td>
         <td>
           <div class="tags">
             <% drawing.tags.each do |tag| %>
-              <span class="tag"><%= tag %></span>
+              <span class="tag is-small"><%= tag %></span>
             <% end %>
           </div>
         </td>
         <td>
-          <figure class="image is-128x128">
-          <% if drawing.picture.attached? %>
-            <%= image_tag drawing.picture %>
-          <% else %>
-            <%= image_tag "placeholder.png" %>
-          <% end %>
-          </figure>
-        </td>
-        <td><%= drawing.notes.html_safe %></td>
-        <td>
-          <div class="is-size-7">
-            Created <%= time_ago_in_words drawing.created_at %> ago, updated <%= time_ago_in_words drawing.updated_at %> ago
-          </div>
-        </td>
-        <td>
-          <%= link_to 'Show', drawing, class: 'button' %>
-        </td>
-        <td>
-          <%= link_to 'Edit', edit_drawing_path(drawing), class: 'button is-primary' %>
-          </td>
-          <td>
-            <%= link_to 'Destroy', drawing, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger' %>
+          <%= link_to 'Show', drawing, class: 'button is-primary' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
-
-<%= link_to 'New Drawing', new_drawing_path, class: 'button is-primary' %>

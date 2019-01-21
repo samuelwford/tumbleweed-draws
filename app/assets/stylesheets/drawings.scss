@@ -12,3 +12,40 @@
     margin-bottom: 0.5rem;
     margin-left: 0.5rem;
 }
+
+/* Responsive */
+@media only screen and (max-width : 768px) {
+    .table:not(.unstackable) {
+      width: 100%;
+    }
+    .table:not(.unstackable) tbody,
+    .table:not(.unstackable) tr,
+    .table:not(.unstackable) tr > th,
+    .table:not(.unstackable) tr > td  {
+      display: block !important;
+      width: auto !important;
+      display: block !important;
+    }
+    .table thead > tr {
+        border-bottom: 2px solid silver !important;
+    }
+    .table tr {
+        border-bottom: 1px solid silver;
+    }
+    .table tr:last-child {
+        border-bottom: none;
+    }
+    .table:not(.unstackable) {
+      padding: 0em;
+    }
+  
+    .table:not(.unstackable) tr > th,
+    .table:not(.unstackable) tr > td {
+      background: none;
+      border: none !important;
+      padding: 0.5em 0.5em !important;
+    }
+    .definition.table:not(.unstackable) thead th:first-child {
+      box-shadow: none !important;
+    }
+}

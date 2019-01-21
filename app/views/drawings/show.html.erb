@@ -18,5 +18,6 @@
 
 <div class="buttons">
   <%= link_to 'Edit', edit_drawing_path(@drawing), class: 'button is-primary' %>
+  <%= link_to 'Destroy', @drawing, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger' %>
   <%= link_to 'Back', drawings_path, class: 'button' %>
 </div>
