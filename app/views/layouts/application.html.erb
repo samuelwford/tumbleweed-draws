@@ -35,21 +35,25 @@
           <a class="navbar-item" href="/about">About</a>
         </div>
         
-        <% if logged_in? %>
-        <div class="navbar-end">
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              Admin
-            </a>
-            <div class="navbar-dropdown is-right">
-              <a class="navbar-item" href="/drawings">Drawings</a>
-              <a class="navbar-item" href="/tags">Tags</a>
-              <a class="navbar-item" href="/logout">Logout</a>
+        <% if in_the_backdoor? %>
+          <div class="navbar-end">
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                Admin
+              </a>
+              <div class="navbar-dropdown is-right">
+                <% if logged_in? %>
+                    <a class="navbar-item" href="/drawings">Drawings</a>
+                    <a class="navbar-item" href="/tags">Tags</a>
+                    <a class="navbar-item" href="/logout">Logout</a>
+                <% else %>
+                    <a class="navbar-item" href="/login">Login</a>
+                <% end %>
+              </div>
             </div>
           </div>
-        </div>
         <% end %>
-        
+
       </div>
     </nav>
     
