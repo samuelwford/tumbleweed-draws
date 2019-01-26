@@ -1,7 +1,7 @@
 <div class="box">
   <div class="title"><%= @drawing.title %></div>
   <% if @drawing.picture.attached? %>
-    <%= image_tag @drawing.picture %>
+    <%= image_tag @drawing.picture.variant(resize: "x500>") %>
     <% else %>
     <figure class="image is-128x128">
       <%= image_tag "placeholder.png" %>
