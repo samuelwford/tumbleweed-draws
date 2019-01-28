@@ -27,7 +27,11 @@
         </td>
         <td>
           <% if drawing.picture.attached? %>
-            <%= image_tag drawing.picture.variant(resize: "128x128>"), class: "thumb" %>
+            <% if drawing.picture.content_type == "image/gif" %>
+              <%= image_tag drawing.picture, class: "thumb" %>
+            <% else %>
+              <%= image_tag drawing.picture.variant(resize: "128x128>"), class: "thumb" %>
+            <% end %>
           <% else %>
             <%= image_tag "placeholder.png", class: "thumb" %>
           <% end %>
