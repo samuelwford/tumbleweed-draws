@@ -63,10 +63,6 @@ class DrawingsController < ApplicationController
   end
 
   private
-    def authorize
-      redirect_to login_path unless logged_in?
-    end
-
     # Use callbacks to share common setup or constraints between actions.
     def set_drawing
       @drawing = Drawing.find(params[:id])
