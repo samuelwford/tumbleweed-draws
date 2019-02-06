@@ -25,9 +25,12 @@ document.addEventListener('turbolinks:load', function() {
 
   // pull out the selected file upload name for forms
   var file = document.getElementById("drawing_picture");
-  file.onchange = function() {
-    if (file.files.length > 0) {
-      document.getElementById('filename').innerHTML = file.files[0].name;
+
+  if (file) {
+    file.onchange = function() {
+      if (file.files.length > 0) {
+        document.getElementById('filename').innerHTML = file.files[0].name;
+      }
     }
   }
 
